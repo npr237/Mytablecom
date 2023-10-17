@@ -1,0 +1,38 @@
+/* styles.scss */
+
+.AppBar {
+    background-color: blueviolet !important;
+}
+.sidebar .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background-color: #ffffff !important;
+    
+    
+
+    .menu-icon {
+        width: 18px !important;
+        height: 18px !important;
+        align-items: center !important;
+        color: black;
+        margin-left: 12px !important;
+    }
+
+    .menu-icon :hover{
+        color: blueviolet;
+    }
+}
+
+
+.actionsColumn {
+    position: sticky;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+  }
+
+  .idColumn {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+  }
+
