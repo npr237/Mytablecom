@@ -24,7 +24,7 @@ export interface ListCompProps{
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',  maxHeight: 300, overflow: 'auto',}}>
       {ListArr.map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+        const labelId = `checkbox-list-label-${value.id}`;
 
         return (
           <ListItem
@@ -42,7 +42,7 @@ export interface ListCompProps{
                   edge="end"
                   aria-label="freeze"
                   sx={{ marginLeft: '20px' }}
-                  onClick={() =>{toggleFrozenn(value.id), toggleFrozen(value.id)}} // Toggle freeze state
+                  onClick={() =>{ toggleFrozen(value.id),toggleFrozenn(value.id)}} // Toggle freeze state
                 >
                   {frozenColumns.includes(value.id) ? <FaSnowflake /> : <FaSun />}
                 </IconButton>
