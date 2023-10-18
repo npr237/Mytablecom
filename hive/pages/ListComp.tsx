@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import CommentIcon from '@mui/icons-material/Comment';
 import { Checkbox, IconButton } from '@mui/material';
 import { BiSort } from 'react-icons/bi';
-import { FaFilter } from 'react-icons/fa';
+import { FaFilter,FaSnowflake,FaSun } from 'react-icons/fa';
 
 export interface ListCompProps{
     ListArr: any[];
@@ -15,8 +15,12 @@ export interface ListCompProps{
     checked: string[]
     handleColumnSort: (value:any) => void
     handleColumnFilter: (value:any) => void
+    toggleFrozen: (columnId: string) => void;
+    toggleFrozenn: (columnId: string) => void // Assuming columnId is of type string, adjust as needed
+  frozenColumns: string[];
   }
-  const ListComp: React.FC<ListCompProps>  = ({ListArr, handleToggle, handleColumnSort, handleColumnFilter, checked}) => {
+  const ListComp: React.FC<ListCompProps>  = ({ListArr,frozenColumns,
+    toggleFrozen,toggleFrozenn, handleToggle, handleColumnSort, handleColumnFilter, checked}) => {
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',  maxHeight: 300, overflow: 'auto',}}>
       {ListArr.map((value) => {
@@ -33,6 +37,15 @@ export interface ListCompProps{
               <IconButton edge="end" aria-label="comments" sx={{marginLeft: '20px',color: value.isFilter? 'none': 'lightblue'}} onClick={() => handleColumnFilter(value)}>
               <FaFilter />
             </IconButton>
+
+            <IconButton
+                  edge="end"
+                  aria-label="freeze"
+                  sx={{ marginLeft: '20px' }}
+                  onClick={() =>{toggleFrozenn(value.id), toggleFrozen(value.id)}} // Toggle freeze state
+                >
+                  {frozenColumns.includes(value.id) ? <FaSnowflake /> : <FaSun />}
+                </IconButton>
             </div>
             }
             disablePadding
