@@ -1,0 +1,44 @@
+{
+    "form":{
+        "Name":"Name",
+        "Email":"Email",
+        "Phone":"Phone",
+        "Address":"Address",
+        "Designation":"Designation",
+        "pincode":"PinCode",
+        "cancel":"cancel",
+        "PinColumn":"Pin Column",
+        "PintoLeft":"Pin to Left",
+        "PintoRight":"Pin to Right",
+        "Id":"Id",
+        "ConfirmDelete":"Confirm Delete",
+        "Delete":" Are you sure you want to delete this row?",
+        "Yes":"Yes",
+        "close":"close",
+        "equal":"equal",
+        "starts":"starts with",
+        "ends":"ends with",
+        "contains":"ends with",
+        "apply":"Apply",
+        "userinfo":"User Details",
+        "title":"My Page Title",
+        "anand":"Anand",
+        "rajat":"rajat",
+        "developer":"developer",
+        "Delhi":"Delhi",
+        "Noida":"Noida",
+        "ram":"Ram",
+        "aman":"Aman",
+        "anand2":"Anand2",
+        "Actions":"Actions",
+        "signUp":"Have sign Up",
+        "signIn":"signIn",
+        "hive":"hive signIn",
+        "remember":"remember me",
+        "forgot":"Forgot your password",
+        "dont":"dont you have Account"
+        
+        
+        
+    }
+}

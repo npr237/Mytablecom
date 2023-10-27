@@ -6,24 +6,28 @@ import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 // ===================
-import SeperateAppBar from './SeperateAppBar';
-import SeperateDrawer from './SeperateDrawer';
+import SeperateAppBar from '../../../components/Sidebar/SeperateAppBar';
+import SeperateDrawer from'../../../components/Sidebar/SeperateDrawer';
 import { Theme } from '@mui/system';
 
-import Workcategories from '../Childcomponent/Workcategories';
-import Allviews from '../Childcomponent/Allviews';
-import AllProjecttable from '../Childcomponent/AllProjecttable';
-import Mytodos from '../Childcomponent/Mytodos';
-import PMIfollowups from '../Childcomponent/PMIfollowups';
-import Vendorfallowups from '../Childcomponent/Vendorfallowups';
-import TableCom from '../../app/[lang]/Tablecom/page';
+import Workcategories from '../../../components/Childcomponent/Workcategories';
+import Allviews from '../../../components/Childcomponent/Allviews';
+import AllProjecttable from '../../../components/Childcomponent/AllProjecttable';
+import Mytodos from '../../../components/Childcomponent/Mytodos';
+import PMIfollowups from '../../../components/Childcomponent/PMIfollowups';
+import Vendorfallowups from '../../../components/Childcomponent/Vendorfallowups';
+
+import TableCom from '../Tablecom/page';
+
 
 export const drawerWidth = 200;
 
 interface MainProps {
   theme: Theme;
   open: boolean;
+  
 }
+
 
 const Main = styled('main', {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -68,7 +72,7 @@ const closedMixin = (theme: any) => ({
   },
 });
 
-export const DrawerHeader = styled('div')(({ theme }) => ({
+export const DrawerHeader = styled('div')(({ theme}) => ({
   display: 'flex',
   alignItems: 'center',
   // justifyContent: 'flex-end',
@@ -123,9 +127,18 @@ export const Drawer = styled(MuiDrawer, {
   }),
 }));
 
+
+
 export default function Sidebarheader() {
   const theme = useTheme();
   const [open, setOpen] = React.useState<boolean>(false);
+
+  // const params = {
+  //   lang: 'en',
+  //       // example
+  //   // ...other params
+  // };
+
 
   const handleDrawerOpen = () => {
     setOpen(true);

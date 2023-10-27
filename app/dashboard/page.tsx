@@ -1,12 +1,12 @@
-import React from 'react'
-import Dashboard from 'hive/pages/dashboard'
+// import React from 'react'
+// import Dashboard from '../../hive/pages/dashboard'
 
-const page = () => {
-  return (
-    <div>
-        <Dashboard />
-    </div>
-  )
-}
+// const page = () => {
+//   return (
+//     <div>
+//         <Dashboard />
+//     </div>
+//   )
+// }
 
-export default page
+// export default page

@@ -1,10 +1,10 @@
 import React from 'react'
-import LoginPage from 'hive/pages/login'
+import Dashboard from '../dashboard'
 
 const page = () => {
   return (
     <div>
-      <LoginPage />
+        <Dashboard />
     </div>
   )
 }

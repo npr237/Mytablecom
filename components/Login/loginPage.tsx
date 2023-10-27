@@ -1,16 +1,56 @@
 import React, { FormEvent } from 'react'; 
 import Link from 'next/link'; 
 import Head from 'next/head';
+import {getDictionary} from '../../getDictionary';
+import {useParams} from '../../app/[lang]/ParamContext';
+import {useEffect,useState} from 'react';
+
 
 interface LoginPageProps {
   handleLogin: (e: FormEvent) => void;
 }
 
+
+ 
+
+
+
+
+
+
+
 const LoginPage: React.FC<LoginPageProps> = ({ handleLogin }) => {
+
+const params = useParams();
+
+const [lang, setLang] = useState<any>(null);
+const [isLoading, setIsLoading] = useState(true);
+
+ 
+
+  
+
+
+  useEffect(() => {
+    console.log('Params lang has changed', params.lang); // To debug
+  
+    const fetchData = async () => {
+      setIsLoading(true);
+      const result = await getDictionary(params.lang);
+      setLang(result);  
+      setIsLoading(false);
+    };
+  
+    fetchData();
+  }, [params.lang]);
+  
+
+  console.log(lang,"lang  from signIn");
+  
   return (
     <div className="main-log">
       <Head>
-        <title>My page title</title>
+        <title>{lang ? lang.form.title : 'Loading...'}</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,7 +59,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ handleLogin }) => {
       <div className="container" id="container">
         <div className="form-container log-in-container">
           <form onSubmit={handleLogin}>
-            <h1>Hive Sign In</h1>
+            <h1>{lang ? lang.form.hive : 'Loading...'}</h1>
             <input
               type="text"
               placeholder="Username"
@@ -34,13 +74,13 @@ const LoginPage: React.FC<LoginPageProps> = ({ handleLogin }) => {
             />
             <div style={{ display: 'flex', marginTop: '5px' }}>
               <input type="checkbox" />
-              <label htmlFor="vehicle1"> Remember me</label>
+              <label htmlFor="vehicle1">{lang ? lang.form.remember : 'Loading...'}</label>
             </div>
-            <a href="#">Forgot your password?</a>
-            <button style={{ cursor: 'pointer' }}>Sign In</button>
+            <a href="#">{lang ? lang.form.forgot: 'Loading...'}</a>
+            <button style={{ cursor: 'pointer' }}>{lang ? lang.form.signIn : 'Loading...'}</button>
             <Link href="/signup"> 
-              <span>Don't Have an Account ?</span>{' '}
-              <span style={{ fontWeight: 'bold' }}>Sign Up</span>
+              <span>{lang ? lang.form.dont: 'Loading...'}</span>{' '}
+              <span style={{ fontWeight: 'bold' }}>   {lang ? lang.form.signUp : 'Loading...'}</span>
             </Link> 
           </form>
         </div>

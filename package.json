@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@formatjs/intl-localematcher": "^0.4.2",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.11",
     "@mui/x-data-grid-generator": "^6.16.0",
@@ -20,6 +21,7 @@
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
     "material-react-table": "^1.15.0",
+    "negotiator": "^0.6.3",
     "next": "13.4.1",
     "react": "18.2.0",
     "react-beautiful-dnd": "^13.1.1",
